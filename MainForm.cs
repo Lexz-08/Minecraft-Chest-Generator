@@ -93,7 +93,7 @@ namespace Minecraft_Chest_Generator
 				.Replace("{0}", kvp_ChestSlot.Key.ToString()))
 				.Where(str_ChestSlotNBT => !string.IsNullOrEmpty(str_ChestSlotNBT)));
 
-			str_Command += $"chest{{ {(chck_GenerateSetblock.Checked ? str_ChestNBT : $"BlockEntityTag:{{ {str_ChestNBT} }}")} }}";
+			str_Command += $"chest{{ {(chck_GenerateSetblock.Checked ? str_ChestNBT : $"BlockEntityTag:{{ Items:[ {str_ChestNBT} ] }}")} }}";
 
 			MessageBox.Show("Command copied to clipboard", "Command Generated and Copied",
 				MessageBoxButtons.OK, MessageBoxIcon.Information);
